@@ -1,7 +1,12 @@
 <nav>
     <h1>AltText</h1>
+
     <div>
+        {% if user.is_authenticated %}
+        <a class="navButton" href="/logout">Log out</a>
+        {% else %}
         <a class="navButton" href="/signin">Sign in</a>
         <a class="navButton" href="/signup">Sign up</a>
+        {% endif %}
     </div>
 </nav>

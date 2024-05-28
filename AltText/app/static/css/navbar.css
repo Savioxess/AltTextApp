@@ -20,6 +20,10 @@ nav h1 {
     color: white
 }
 
+nav div {
+    display: flex;
+}
+
 .navButton {
     text-decoration: none;
     margin: 0 0.5rem;
