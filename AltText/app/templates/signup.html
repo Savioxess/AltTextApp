@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <title>Signup - AltText</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <form id="signupForm" method="post">
+        <h1>Sign up</h1>
+        {% csrf_token %}
+        <label class="formLabel">Username</label>
+        <input required id="username" name="username" class="formInput" type="text">
+        <label class="formLabel">Email</label>
+        <input required id="email" name="email" class="formInput" type="email">
+        <label class="formLabel">Password</label>
+        <div class="passwordInputContainer">
+            <input required id="password" name="password" class="formInput" type="password">
+            <button onclick="showHidePassword()" type="button"><img id="passwordShowHideIcon" src="/static/images/view.png" alt="show"></button>
+        </div>
+        <label class="formLabel">Confirm Password</label>
+        <div class="passwordInputContainer">
+            <input required id="password-confirm" name="password-confirm" class="formInput" type="password">
+            <button onclick="showHideConfirmPassword()" type="button"><img id="passwordShowHideIcon-confirm" src="/static/images/view.png" alt="show"></button>
+        </div>
+        <button type="submit" id="signupButton">Log in</button>
+        <a href="/signup">Have not already created an account?</a>
+    </form>
+    <script src="{% static 'js/passwordShowHide.js' %}"></script>
+    <script src="{% static 'js/signupPasswordMatch.js' %}"></script>
+</body>
+</html>
