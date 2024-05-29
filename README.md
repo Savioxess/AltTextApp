@@ -8,7 +8,7 @@ pip install -r Requirements.txt
 ```
 
 ## 2. Creating Database
-Configure database settings in `AltText/settings.py` if required. Create a database with the name 'alttext'.
+Configure database settings in `AltText/settings.py` if required. Create a database in mysql with the name 'alttext'.
 
 ## 3. Applying Migrations
 Change directory to AltText directory containing the `manage.py` file and run the following command.
