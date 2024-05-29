@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+    <title>AltText - Generate Result</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div id="imageContainer">
+        <img src="data:image/jpeg;base64,{{ encoded_image }}" alt="input image">
+    </div>
+</body>
+</html>

@@ -14,10 +14,10 @@
         <h1>Sign in</h1>
         {% csrf_token %}
         <label class="formLabel">Username</label>
-        <input id="username" name="username" class="formInput" type="text">
+        <input id="username" name="username" class="formInput" type="text" required>
         <label class="formLabel">Password</label>
         <div id="passwordInputContainer">
-            <input id="password" name="password" class="formInput" type="password">
+            <input id="password" name="password" class="formInput" type="password" required>
             <button onclick="showHidePassword()" type="button"><img id="passwordShowHideIcon" src="/static/images/view.png" alt="show"></button>
         </div>
         <button type="submit" id="loginButton">Log in</button>

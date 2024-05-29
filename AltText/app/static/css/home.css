@@ -1,0 +1,98 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#imageInputContainer {
+    display: flex;
+    width: 50%;
+    margin: 2rem 0;
+    border: 0.15rem rgb(150,150,150) dashed;
+    border-radius: 0.25rem;
+    height: 20rem;
+    cursor: pointer;
+}
+
+#imageInput {
+    display: none;
+}
+
+#inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+#inputContainer:hover {
+    background-color: rgb(240,240,240);
+}
+
+#inputContainer h1 {
+    font-size: 1.25rem;
+    font-family: "Roboto", sans-serif;
+    color: rgb(120,120,120);
+}
+
+#inputContainer p {
+    color: rgb(150,150,150);
+    font-family: "Roboto", sans-serif;
+    font-size: 0.75rem;
+}
+
+#inputContainer button {
+    padding: 1rem 3rem;
+    border-radius: 0.25rem;
+    background-color: black;
+    color: white;
+}
+
+#inputContainer button:hover {
+    cursor: pointer;
+    background-color: rgb(20,20,20);
+}
+
+#imagePreviewContainer {
+    display: none;
+    width: 100%;
+}
+
+#imagePreview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    object-fit: cover;
+}
+
+#submitButton {
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.15rem;
+    color: white;
+    font-weight: bold;
+    background-color: #1DBE53;
+}
+
+#submitButton:hover {
+    cursor: pointer;
+    background-color: #148239;
+}
+
+@media (max-width: 1000px) {
+    #imageInputContainer {
+        width: 95%;
+        height: 12rem;
+    }
+
+    #submitButton {
+        width: 95%;
+    }
+}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -12,12 +13,16 @@ nav {
     padding: 0.85rem;
     border-bottom: 0.1rem rgb(230,230,230) solid;
     font-family: "Roboto Condensed", sans-serif;
-    background-color: black;
+    background-color: white;
+    border-bottom: 0.1rem rgb(240,240,240) solid;
 }
 
-nav h1 {
-    font-family: "Pattaya", sans-serif;
-    color: white
+#title {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: black;
+    font-size: 1.5rem;
 }
 
 nav div {
@@ -29,12 +34,16 @@ nav div {
     margin: 0 0.5rem;
     padding: 0.5rem 2rem;
     border-radius: 0.25rem;
-    background-color: rgb(30,30,30);
+    background-color: #1DBE53;
     color: white
 }
 
 @media (max-width: 400px) {
     .navButton:last-of-type {
         display: none
+    }
+
+    #logout {
+        display: block !important;
     }
 }

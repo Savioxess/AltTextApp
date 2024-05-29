@@ -5,9 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>AltText - Home</title>
 </head>
 <body>
     {% include 'navbar.html' %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id="imageInputContainer">
+            <input required id="imageInput" name="imageInput" type="file" accept="image/jpeg, image/png, image/webp">
+            <div id="inputContainer">
+                <h1>Click to select</h1>
+                <p>JPG, PNG, WebP</p>
+                <button>Choose File</button>
+            </div>
+            <div id="imagePreviewContainer">
+                <img id="imagePreview" src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+        </div>
+        <button type="submit" id="submitButton">Submit Image</button>
+    </form>
+    <script src="{% static 'js/fileInputClick.js' %}"></script>
+    <script src="{% static 'js/imagePreview.js' %}"></script>
 </body>
 </html>
