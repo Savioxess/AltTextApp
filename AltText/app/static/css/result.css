@@ -1,7 +1,15 @@
+.container {
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
 #imageContainer {
     display: block;
     width: 50%;
-    margin: 2rem auto;
 }
 
 #imageContainer img {
@@ -12,9 +20,31 @@
     border-radius: 0.25rem;
 }
 
+#responseText {
+    width: 50%;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(230,230,230);
+    border-radius: 0.25rem;
+    resize: none;
+}
+
+#responseText:focus {
+    outline: none;
+}
+
+.label {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
 @media (max-width: 1000px) {
     #imageContainer {
         width: 95%;
-        margin: 1rem auto;
+    }
+
+    #responseText {
+        width: 95%;
     }
 }

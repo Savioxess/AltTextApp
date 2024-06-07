@@ -54,7 +54,11 @@ class Home(LoginRequiredMixin, View):
             image_bytes = image.read()
             encoded_image = base64.b64encode(image_bytes).decode('utf-8')
 
-            return render(request, 'result.html', {'encoded_image': encoded_image})
+            test_api_response = {
+                'response': 'This image is a beautiful digital artwork depicting a landscape scene at sunset. The sky is filled with vibrant colors ranging from deep blues to bright oranges and pinks, creating a dramatic and colorful cloudscape. In the foreground, there is a leafless tree with branches stretching across the scene, casting shadows and adding depth to the image. The sunlight is seen near the horizon, casting a warm glow across the snow-covered landscape. In the background, there are mountains with sharp peaks and ridges, enhancing the sense of vastness and natural beauty. The overall composition blends elements of nature with an artistic, almost surreal touch, emphasizing the striking colors and serene atmosphere.'
+            }
+
+            return render(request, 'result.html', {'encoded_image': encoded_image, 'response': test_api_response.get('response')})
         
         return redirect('/')
 

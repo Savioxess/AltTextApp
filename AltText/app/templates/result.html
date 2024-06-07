@@ -10,8 +10,12 @@
 </head>
 <body>
     {% include 'navbar.html' %}
+    <div class="container">
     <div id="imageContainer">
         <img src="data:image/jpeg;base64,{{ encoded_image }}" alt="input image">
     </div>
-</body>
+    <label class="label" for="response">Response</label>
+    <textarea autofocus name="response" id="responseText" cols="30" rows="10">{{ response }}</textarea>
+</div>
+    </body>
 </html>
