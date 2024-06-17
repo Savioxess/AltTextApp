@@ -10,7 +10,7 @@
 </head>
 <body>
     {% include 'navbar.html' %}
-    <form method="post" enctype="multipart/form-data">
+    <form id="imageForm" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div id="imageInputContainer">
             <input required id="imageInput" name="imageInput" type="file" accept="image/jpeg, image/png, image/webp">
@@ -23,6 +23,7 @@
                 <img id="imagePreview" src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
             </div>
         </div>
+        <button type="button" id="changeImageButton" class="hidden">Change Image</button>
         <button type="submit" id="submitButton">Submit Image</button>
     </form>
     <script src="{% static 'js/fileInputClick.js' %}"></script>

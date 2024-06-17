@@ -1,12 +1,18 @@
+{% load static %}
 <nav>
     <a id="title" href="/">AltText</a>
 
     <div>
         {% if user.is_authenticated %}
-        <a id="logout" class="navButton" href="/logout">Log out</a>
+        <button id="dropdownButton"><img style="width: 2rem; height: 2rem;" src="{% static 'images/defaultUser.jpg' %}" alt="profile"></button>
+        <div id="dropdownMenu" class="hidden">
+            <a class="dropmenuButtons" href="/profile">Your Profile</a>
+            <a class="dropmenuButtons" href="/logout">Log Out</a>
+        </div>
         {% else %}
         <a class="navButton" href="/signin">Sign in</a>
         <a class="navButton" href="/signup">Sign up</a>
         {% endif %}
     </div>
 </nav>
+<script src="{% static 'js/profileDropdown.js' %}" defer></script>

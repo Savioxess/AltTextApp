@@ -86,6 +86,22 @@ form {
     background-color: #148239;
 }
 
+#changeImageButton {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    background-color: black;
+}
+
+#changeImageButton:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 1000px) {
     #imageInputContainer {
         width: 95%;

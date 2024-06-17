@@ -1,21 +1,35 @@
 {% load static %}
+{% csrf_token %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/result.css' %}">
     <title>AltText - Generate Result</title>
 </head>
 <body>
     {% include 'navbar.html' %}
-    <div class="container">
-    <div id="imageContainer">
-        <img src="data:image/jpeg;base64,{{ encoded_image }}" alt="input image">
+    <div id="infoDisplay">
+        
     </div>
-    <label class="label" for="response">Response</label>
-    <textarea autofocus name="response" id="responseText" cols="30" rows="10">{{ response }}</textarea>
-</div>
-    </body>
+    <div class="container">
+        <div id="imageContainer">
+            <h1 class="fileNameDisplay">{{ file_name }}</h1>
+            <img src="data:image/jpeg;base64,{{ encoded_image }}" alt="input image">
+        </div>
+        <form id="saveForm">
+            <input type="text" name="fileName" id="fileName" value="{{ file_name }}" hidden>
+            <label class="label" for="response">Response</label>
+            <textarea autofocus name="response" id="responseText" cols="30" rows="10" maxlength="1000">{{ response }}</textarea>
+            <div class="saveContainer">
+                <button class="saveButton" id="saveButton">Save</button>
+                <a class="goBackButton" href="/">Go Back</a>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/handleSave.js' %}"></script>
+</body>
 </html>

@@ -38,6 +38,51 @@ nav div {
     color: white
 }
 
+#dropdownButton {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#dropdownButton:hover {
+    cursor: pointer;
+}
+
+#dropdownMenu {
+    border-radius: 0.25rem;
+    flex-direction: column;
+    position: absolute;
+    right: 1rem;
+    background-color: rgb(240,240,240);
+    top: 3.5rem;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.dropmenuButtons {
+    text-decoration: none;
+    padding: 1rem 3rem;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem 3rem;
+}
+
+.dropmenuButtons:hover {
+    background-color: rgb(230,230,230);
+}
+
 @media (max-width: 400px) {
     .navButton:last-of-type {
         display: none
