@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+import requests
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from .models import SavedTexts
@@ -7,6 +8,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import json
 from django.views import View
 import base64
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+api_key = os.getenv("ALTTEXT_API_KEY")
 
 # Create your views here.
 class Signup(View):
@@ -54,6 +61,7 @@ class Signin(View):
 class Home(LoginRequiredMixin, View):
     login_url='/signin'
     redirect_field_name=''
+
     def get(self, request):
         return render(request, 'home.html')
     
@@ -63,13 +71,12 @@ class Home(LoginRequiredMixin, View):
             image_bytes = image.read()
             encoded_image = base64.b64encode(image_bytes).decode('utf-8')
 
-            test_api_response = {
-                'response': 'This image is a beautiful digital artwork depicting a landscape scene at sunset. The sky is filled with vibrant colors ranging from deep blues to bright oranges and pinks, creating a dramatic and colorful cloudscape. In the foreground, there is a leafless tree with branches stretching across the scene, casting shadows and adding depth to the image. The sunlight is seen near the horizon, casting a warm glow across the snow-covered landscape. In the background, there are mountains with sharp peaks and ridges, enhancing the sense of vastness and natural beauty. The overall composition blends elements of nature with an artistic, almost surreal touch, emphasizing the striking colors and serene atmosphere.'
-            }
+            api_response = get_altText(encoded_image)
 
-            return render(request, 'result.html', {'encoded_image': encoded_image, 'response': test_api_response.get('response'), 'file_name': image.name})
+            return render(request, 'result.html', {'encoded_image': encoded_image, 'response': api_response, 'file_name': image.name})
         
         return redirect('/')
+    
 
 class Logout(View):
     def get(self, request):
@@ -114,3 +121,20 @@ class Profile(LoginRequiredMixin, View):
         saved_texts = [(saved_text.filename, saved_text.text) for saved_text in query_response]
         
         return render(request, 'profile.html', {'saved_texts': saved_texts})
+
+def get_altText(base64_str):
+    url = "https://alttext.ai/api/v1/images"
+
+    payload = json.dumps({
+        "image": {
+            "raw": base64_str
+        }
+    })
+
+    headers = {
+        'Content-Type': 'application/json',
+        'X-API-Key': api_key
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+    return json.loads(response.text)['alt_text']

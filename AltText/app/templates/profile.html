@@ -15,14 +15,20 @@
             <h1>{{ user.username }}</h1>
             <h2>{{ user.email }}</h2>
         </div>
-        <h1 class="label">Saved Texts</h1>
+        <h1 class="label">Saved AltTexts</h1>
         <div class="savedTexts">
-            {% for filename, text in saved_texts %}
-            <div class="savedText" id="{{ filename }}">
-                <button style="display: flex; justify-content: space-between;" onclick="expand('{{ filename }}')">{{ filename }}<img style="width: 1rem; height: 1rem;" src="{% static 'images/expand.png' %}" alt="show-text"></button>
-                <p id="expand" class="hidden scale-in-ver-top">{{text}}</p>
-            </div>
-            {% endfor %}
+            <table>
+                <tr class="fieldNames">
+                    <th>Image Name</th>
+                    <th>AltText</th>
+                </tr>
+                {% for filename, text in saved_texts %}
+                <tr class="savedText">
+                    <td class="filename">{{filename}}</th>
+                    <td class="text">{{text}}</th>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
     <script src="{% static 'js/expandText.js' %}"></script>
