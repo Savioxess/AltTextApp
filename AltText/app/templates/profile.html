@@ -9,7 +9,7 @@
     <title>Profile - {{ user.username }}</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
+    {% include 'components/navbar.html' %}
     <div class="container">
         <div class="profile">
             <h1>{{ user.username }}</h1>
@@ -31,6 +31,5 @@
             </table>
         </div>
     </div>
-    <script src="{% static 'js/expandText.js' %}"></script>
 </body>
 </html>
