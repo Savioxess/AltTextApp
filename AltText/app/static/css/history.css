@@ -2,8 +2,6 @@
     display: flex;
     margin: 2rem auto;
     width: 75%;
-    padding: 1rem 1rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
@@ -36,11 +34,11 @@
 
 table {
   border-collapse: collapse;
-  padding: 0.25rem;
+  width: 100%;
 }
 
 .fieldNames {
-  background-color: #1DBE53;
+  background-color: black;
 }
 
 .fieldNames th {
@@ -60,9 +58,14 @@ table {
 .text {
   font-weight: 300;
   min-width: 20rem;
-  height: 3rem;
+  max-height: 3rem;
   display: block;
   overflow: auto;
+}
+
+.dateandtime {
+  font-weight: 300;
+  white-space: nowrap;
 }
 
 .text::-webkit-scrollbar-track
@@ -79,29 +82,113 @@ table {
 
 .text::-webkit-scrollbar-thumb
 {
-	background-color: rgb(80,80,80);
+	background-color: rgb(160, 160, 160);
 }
 
 table tr:nth-child(even){background-color: #f2f2f2;}
 
+.filename {
+  white-space: nowrap;
+}
+
 .savedText td {
+  padding: 0.75rem 2rem;
   font-family: "Roboto", sans-serif;
   padding-top: 12px;
   padding-left: 5px;
   padding-bottom: 12px;
 }
 
+.title {
+  display: flex;
+  gap: 1rem;
+}
+
+.download-history {
+  padding: 0.25rem 1rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  background-color: #1DBE53;
+  border-radius: 0.25rem;
+}
+
+.download-history:hover {
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.dateFilter {
+  padding: 0.5rem;
+  background-color: rgb(230, 230, 230);
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+}
+
+.dateFilter:focus {
+  outline: none;
+}
+
+.imageNameFilter {
+  padding: 0.5rem;
+  background-color: rgb(230, 230, 230);
+  margin-left: 2rem;
+  border-radius: 0.25rem;
+}
+
+.filterButton {
+  padding: 0.5rem 1rem;
+  background-color: #1DBE53;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 0.25rem; 
+}
+
+.filterButton:hover {
+  cursor: pointer;
+}
+
+.resetFilters {
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  background-color: #bf0000;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 0.25rem; 
+}
+
+.imageNameFilter:focus {
+  outline: none;
+}
+
 @media (max-width: 800px) {
   .container {
       margin: 0rem;
-      padding: 0;
-      box-shadow: none;
-      width: 100%;
+      padding: 0.25rem;
+      width: 95%;
       overflow: hidden;
   }
 
   .savedTexts {
     width: 100%;
     overflow-x: auto;
+  }
+
+  .filename {
+    width: 5rem;
+    white-space: normal;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .imageNameFilter {
+    margin-left: 0;
   }
 }

@@ -46,5 +46,4 @@ function endCooldown() {
     saveButton.disabled = false
     saveButton.classList.add("saveButton")
     saveButton.classList.remove("disabledSaveButton")
-
 }

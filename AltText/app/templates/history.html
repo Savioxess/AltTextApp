@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
+    <title>{{ user.username }} - History</title>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+    <div class="container">
+        <div class="title">
+            <h1 class="label">History</h1>
+            <form method="POST" action="/download-history/">
+                {% csrf_token %}
+                <input type="hidden" name="csv_content" value="{{csv_file}}">
+                <button class="download-history" type="submit">Download CSV</button>
+            </form>
+        </div>
+        <div>
+            <form class="filters" method="GET" action="">
+                <div>
+                <input class="dateFilter" type="date" name="start-date"> - <input class="dateFilter" type="date" name="end-date">
+                </div>
+                <input class="imageNameFilter" type="text" name="image_name" placeholder="Filter by image name">
+                <div>
+                    <button type="submit" class="filterButton">Filter</button>
+                    <a class="resetFilters" href="/history/">Reset Filters</a>
+                </div>
+            </form>
+        </div>
+        <div class="savedTexts">
+            <table>
+                <tr class="fieldNames">
+                    <th>Image Name</th>
+                    <th>AltText</th>
+                    <th>Created On</th>
+                </tr>
+                {% for filename, text, datetime in saved_texts %}
+                <tr class="savedText">
+                    <td class="filename">{{filename}}</th>
+                    <td class="text">{{text}}</th>
+                    <td class="dateandtime">{{datetime}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

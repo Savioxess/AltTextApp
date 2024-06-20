@@ -24,7 +24,7 @@
 
 .container {
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -39,16 +39,18 @@
 }
 
 #imageContainer {
-    display: block;
-    width: 50%;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 18rem;
+    background-color: black;
 }
 
 #imageContainer img {
     display: block;
     width: 100%;
     max-height: 100%;
-    object-fit: cover;
-    border-radius: 0.25rem;
+    object-fit: contain;
 }
 
 #saveForm {
@@ -103,7 +105,7 @@
 }
 
 .goBackButton {
-    background-color: #1C1AC6;
+    background-color: black;
     color: white;
     text-decoration: none;
     font-family: "Poppins", sans-serif;

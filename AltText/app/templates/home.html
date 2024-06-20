@@ -15,6 +15,7 @@
         <div id="imageInputContainer">
             <input required id="imageInput" name="imageInput" type="file" accept="image/jpeg, image/png, image/webp">
             <div id="inputContainer">
+                <img src="{% static 'images/upload.png' %}" alt="upload" style="width: 3rem; height: 3rem;">
                 <h1>Click to select</h1>
                 <p>JPG, PNG, WebP</p>
                 <button>Choose File</button>
@@ -23,8 +24,10 @@
                 <img id="imagePreview" src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
             </div>
         </div>
-        <button type="button" id="changeImageButton" class="hidden">Change Image</button>
-        <button type="submit" id="submitButton">Submit Image</button>
+        <div class="buttonContainer">
+            <button type="submit" id="submitButton">Generate AltText<img src="{% static 'images/generate.png' %}" style="width: 1rem; height: 1rem;" alt="generate"></button>
+            <button type="button" id="changeImageButton" class="hidden">Change Image</button>
+        </div>
     </form>
     <script src="{% static 'js/fileInputClick.js' %}"></script>
     <script src="{% static 'js/imagePreview.js' %}"></script>

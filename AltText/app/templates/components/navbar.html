@@ -1,12 +1,12 @@
 {% load static %}
 <nav>
-    <a id="title" href="/">AltText</a>
+    <a id="title" href="/">AltText Generator</a>
 
     <div>
         {% if user.is_authenticated %}
         <button id="dropdownButton"><img style="width: 2rem; height: 2rem;" src="{% static 'images/defaultUser.jpg' %}" alt="profile"></button>
         <div id="dropdownMenu" class="hidden">
-            <a class="dropmenuButtons" href="/profile">Your Profile</a>
+            <a class="dropmenuButtons" href="/history">My History</a>
             <a class="dropmenuButtons" href="/logout">Log Out</a>
         </div>
         {% else %}

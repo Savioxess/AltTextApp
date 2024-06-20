@@ -7,8 +7,8 @@ form {
 #imageInputContainer {
     display: flex;
     width: 50%;
-    margin: 2rem 0;
-    border: 0.15rem rgb(150,150,150) dashed;
+    margin: 1rem 0;
+    border: 0.05rem rgb(150,150,150) dashed;
     border-radius: 0.25rem;
     height: 20rem;
     cursor: pointer;
@@ -34,7 +34,8 @@ form {
 
 #inputContainer h1 {
     font-size: 1.25rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     color: rgb(120,120,120);
 }
 
@@ -48,6 +49,7 @@ form {
     padding: 1rem 3rem;
     border-radius: 0.25rem;
     background-color: black;
+    font-family: "Poppins", sans-serif;
     color: white;
 }
 
@@ -65,19 +67,22 @@ form {
     display: block;
     width: 100%;
     height: 100%;
-    background-color: red;
-    object-fit: cover;
+    background-color: black;
+    object-fit: contain;
 }
 
 #submitButton {
-    width: 50%;
-    text-align: center;
-    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     font-family: "Poppins", sans-serif;
-    font-size: 1.15rem;
+    font-size: 0.9rem;
     color: white;
-    font-weight: bold;
+    margin-bottom: 1rem;
+    font-weight: 400;
     background-color: #1DBE53;
 }
 
@@ -86,11 +91,19 @@ form {
     background-color: #148239;
 }
 
+.buttonContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
 #changeImageButton {
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
     border-radius: 0.25rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 0.9rem;
     color: white;
     margin-bottom: 1rem;
@@ -108,7 +121,14 @@ form {
         height: 12rem;
     }
 
-    #submitButton {
-        width: 95%;
+    .buttonContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    #inputContainer button {
+        padding: 0.5rem 3rem;
     }
 }

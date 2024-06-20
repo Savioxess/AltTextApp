@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -8,6 +9,7 @@ class SavedTexts(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     filename = models.CharField(max_length=255)
     text = models.CharField(max_length=1000)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.text_id} - {self.filename}'

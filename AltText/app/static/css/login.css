@@ -74,8 +74,9 @@
 #loginButton:hover {
     cursor: pointer;
 }
+
 #loginForm a {
-    text-decoration: none;
+    text-decoration: underline;
     font-family: "Roboto Condensed", sans-serif;
     color: rgb(50,50,50)
 }
