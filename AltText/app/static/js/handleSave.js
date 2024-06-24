@@ -14,7 +14,7 @@ saveForm.addEventListener("submit", async function(e) {
         "text": e.target.response.value
     }
 
-    const response = await fetch("http://127.0.0.1:8000/saveText/", {
+    const response = await fetch("/saveText/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
