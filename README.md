@@ -12,11 +12,12 @@ Create `.env` file in same directory as `manage.py` file. Set the values of foll
 
 ```
 DJANGO_SECRET_KEY=
-DEBUG=
+DJANGO_ENV=
 DATABASE_HOST=
 DATABASE_NAME=
 DATABASE_USER=
 DATABASE_PASSWORD=
+ALTTEXT_API_KEY=
 ```
 
 ## 3. Creating Database
